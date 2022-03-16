@@ -3,9 +3,9 @@
 
 A simple example to build GBA FE8U hacks (in C) based on [Proj.decomp](https://github.com/FireEmblemUniverse/fireemblem8u.git).
 
-## how2
+## how2 (for windows user)
 
-- Update submodules with `git submodule update --init --recursive`, or just download each submodule inside `Tools/` folder.
+- Clone repo with command `git clone --recursive https://github.com/MokhaLeee/FE-cHack-Template.git` or update submodules with `git submodule update --init --recursive` after cloning, or just download each submodule inside `Tools/` folder.
 
 - have [devkitARM](https://devkitpro.org/wiki/Getting_Started) installed, and the `DEVKITARM` env variable set.
 
@@ -23,7 +23,14 @@ For more details, you can see tips on [StanH's CHAX](https://github.com/StanHash
 
 ## Wizardry Construction
 
-Just copy source code inside `src` folder of [Proj.Decomp of FireEmblem8u](https://github.com/FireEmblemUniverse/fireemblem8u/tree/master/src) and put them inside `Wizardry/`, add command `#include "gbafe.h"` on head on our own C file, include `*.lyn.event` file in `_WizardryMain.event` and `make hack`. You can get more info in [readme file of C-Lib](https://github.com/MokhaLeee/FE-CLib-Mokha.git).
+- Create C file in `Wizardry/` folder and add command `#include "gbafe.h"` on head of which,
+
+- Copy source code inside `src` folder of [Proj.Decomp of FireEmblem8u](https://github.com/FireEmblemUniverse/fireemblem8u/tree/master/src) 
+
+- Include `*.lyn.event` file inside `_WizardryMain.event`
+- Return root folder, open `Msys2` or Windows Terminal or some thing, type `make hack`. 
+
+You can get more info in [readme file of C-Lib](https://github.com/MokhaLeee/FE-CLib-Mokha.git).
 
 ## Tips
 
