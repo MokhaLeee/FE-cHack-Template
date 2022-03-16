@@ -23,15 +23,9 @@ For more details, you can see tips on [StanH's CHAX](https://github.com/StanHash
 
 ## Wizardry Construction
 
-Just copy [source code inside Proj.Decomp of FireEmblem8u](https://github.com/FireEmblemUniverse/fireemblem8u/tree/master/src) and put them inside `Wizardry/`, add command `#include "gbafe.h"` on head on our own C file, include `*.lyn.event` file in Main.event and `make hack`. You can get more info in [readme file of C-Lib](https://github.com/MokhaLeee/FE-CLib-Mokha.git).
+Just copy source code inside `src` folder of [Proj.Decomp of FireEmblem8u](https://github.com/FireEmblemUniverse/fireemblem8u/tree/master/src) and put them inside `Wizardry/`, add command `#include "gbafe.h"` on head on our own C file, include `*.lyn.event` file in `_WizardryMain.event` and `make hack`. You can get more info in [readme file of C-Lib](https://github.com/MokhaLeee/FE-CLib-Mokha.git).
 
-## General `make`/EA guidelines
-
-- **_Never_ use spaces in filenames/paths.** This breaks `make` horribly. This is one of the main reason I had to modify most of circles tools for them to work with this setup.
-
-
-- Don't use `#incext`/`#inctext` unless you *really* need to. Use `#include`/`#incbin` with files generated from Makefile rules instead. This speeds up the build process tremendously.
-
+## Tips
 
 - **Q:** ERROR with `switch` statement when assembling C, where EA would told me `Undefined identifier: _LP___gnu_thumb1_case_uqi`
 
@@ -44,6 +38,8 @@ Just copy [source code inside Proj.Decomp of FireEmblem8u](https://github.com/Fi
 	```pip install -r requirements.txt```
 	
 	Just follow to [Tools/PyTools/TMS2EA/SETUP.md](https://github.com/StanHash/tmx2ea/blob/c77111a9c7a13208a2afb0984b253fa84df79479/SETUP.md).
+
+- **_Never_ use spaces in filenames/paths.** This breaks `make` horribly. This is one of the main reason I had to modify most of circles tools for them to work with this setup.
 
 ## Big thankies
 
