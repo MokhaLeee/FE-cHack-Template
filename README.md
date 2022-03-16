@@ -14,7 +14,7 @@ A simple example to build GBA FE8U hacks (in C) based on [Proj.decomp](https://g
 - Download [EventAssembler release](https://github.com/StanHash/EventAssembler/releases/tag/1.0), and unzip which in `Tools` folder.
 
 - Put `Fire Emblem 8: Scared Stones`(sha1: c25b145e37456171ada4b0d440bf88a19f4d509f) clean rom named `FE8U.gba` in directory.
-- Open `Msys2` (which will be installed on DevkitPRO installation), or `Windows termianl` and get into current folder, type command `make` or `make hack` to build rom `HACK.gba`
+- Open `Msys2` (which will be installed on DevkitPRO installation), or `Windows terminal` and get into current folder, type command `make` or `make hack` to build rom `HACK.gba`
 
 - Further more, you can `make clean` to clean build outputs.
 
@@ -28,7 +28,7 @@ For more details, you can see tips on [StanH's CHAX](https://github.com/StanHash
 - Copy source code inside `src` folder of [Proj.Decomp of FireEmblem8u](https://github.com/FireEmblemUniverse/fireemblem8u/tree/master/src) 
 
 - Include `*.lyn.event` file inside `_WizardryMain.event`
-- Return root folder, open `Msys2` or Windows Terminal or some thing, type `make hack`. 
+- Return root folder, open Msys2 or Windows Terminal or some thing, `make hack`. 
 
 You can get more info in [readme file of C-Lib](https://github.com/MokhaLeee/FE-CLib-Mokha.git).
 
