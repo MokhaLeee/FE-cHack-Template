@@ -43,9 +43,9 @@ $(ROM_TARGET): $(EVENT_MAIN) $(EVENT_DEPENDS) $(ROM_SOURCE)
 	@cp -f $(ROM_SOURCE) $(ROM_TARGET)
 	@$(EA) A FE8 -output:$(ROM_TARGET) -input:$(EVENT_MAIN) $(EAFLAGS) || (rm $(ROM_TARGET) && false)
 
-ifeq ($(MAKECMDGOALS),clean)
-  CLEAN_FILES += $(ROM_TARGET) $(ROM_TARGET:.gba=.sym) $(EVENT_SYMBOLS)
-endif
+
+CLEAN_FILES += $(ROM_TARGET)
+
 
 # ===================
 # = COMPONENT RULES =

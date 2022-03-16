@@ -56,15 +56,12 @@ SDEPFLAGS = --MD "$(CACHE_DIR)/$(notdir $*).d"
 # = MAKE CLEAN =
 # ==============
 
-ifeq ($(MAKECMDGOALS),clean)
+# ASM/C and generated files
+CFILES := $(shell find -type f -name '*.c')
+SFILES := $(shell find -type f -name '*.s')
 
-  # ASM/C and generated files
-  CFILES := $(shell find -type f -name '*.c')
-  SFILES := $(shell find -type f -name '*.s')
+ASM_C_GENERATED := $(CFILES:.c=.o) $(SFILES:.s=.o) $(CFILES:.c=.asm)
+ASM_C_GENERATED += $(ASM_C_GENERATED:.o=.dmp) $(ASM_C_GENERATED:.o=.lyn.event)
 
-  ASM_C_GENERATED := $(CFILES:.c=.o) $(SFILES:.s=.o) $(CFILES:.c=.asm)
-  ASM_C_GENERATED += $(ASM_C_GENERATED:.o=.dmp) $(ASM_C_GENERATED:.o=.lyn.event)
+CLEAN_FILES += $(ASM_C_GENERATED)
 
-  CLEAN_FILES += $(ASM_C_GENERATED)
-
-endif

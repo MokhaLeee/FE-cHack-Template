@@ -1,17 +1,14 @@
 #include "gbafe.h"
 
 int GetUnitPower(struct Unit* unit) {
-	
-	int stat;
+    return unit->pow + GetItemPowBonus(GetUnitEquippedWeapon(unit));
+}
 
-	stat = unit->pow;
-	stat += GetItemPowBonus(GetUnitEquippedWeapon(unit));
-	
-	if( CHARACTER_EIRIKA == unit->pCharacterData->number )
-	{
-		stat += 1;
-	}
-	
-	
-    return stat;
+int GetUnitSpeed(struct Unit* unit) {
+    int item = GetUnitEquippedWeapon(unit);
+
+    if (unit->state & US_RESCUING)
+        return unit->spd / 2 + GetItemSpdBonus(item);
+
+    return unit->spd + GetItemSpdBonus(item);
 }
