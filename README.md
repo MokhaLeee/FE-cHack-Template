@@ -1,36 +1,53 @@
 
-# Stan's CHax for FE8U
+# Mokha's FE8U-CHAX-template
 
-GBAFE hacks (in C!) and `EA`/`make` template. See [FE8UASMHax](https://github.com/StanHash/FE8UASMHax) for older stuff (there's still a few things left there that I haven't ported to here yet).
+A simple example to build GBA FE8U hacks (in C) based on [Proj.decomp](https://github.com/FireEmblemUniverse/fireemblem8u.git).
 
 ## how2
 
-You need to be on some Linux (Windows users: consider using [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).
-
-This repository makes use of the git submodule facilities. If you didn't clone the repository using `git clone --recursive`, then you will need to `git submodule update --init --recursive` before being able to build this.
+- Update submodules with `git submodule update --init --recursive`, or just download each submodule inside `Tools/` folder.
 
 - have [devkitARM](https://devkitpro.org/wiki/Getting_Started) installed, and the `DEVKITARM` env variable set.
+
 - have [python 3](https://www.python.org/) installed and in your path. (the makefile *should* be able to find the correct python executable name. See [`tooks.mk`](./tooks.mk)).
-- have built Tools/EventAssembler by running `Tools/EventAssembler/build.sh`. [See the attached README for details](https://github.com/StanHash/EventAssembler/blob/main/README.md).
 
-Once all of that is done, you can navigate to this folder in your shell and do the following:
+- Download [EventAssembler release](https://github.com/StanHash/EventAssembler/releases/tag/1.0), and unzip which in `Tools` folder.
 
-- `make` or `make hack` to build the ROM (requires `FE8U.gba` in the directory)
-- If you want to make a speicifc hack, simply include its main installer from `Main.event` or `Wizardry/Wizardry.event` and `make` again.
-- you can `make SomeFile.[o|asm|dmp|lyn.event]` to make a specific file (`asm` files are generated from C).
-- run `make clean` to clean build outputs.
+- Put `Fire Emblem 8: Scared Stones`(sha1: c25b145e37456171ada4b0d440bf88a19f4d509f) clean rom named `FE8U.gba` in directory.
+- Open Msys2 (which will be installed on DevkitPRO installation) and get into current folder, type command `make` or `make hack` to build rom `HACK.gba`
 
-hf :)
+- Further more, you can `make clean` to clean build outputs.
+
+For more details, you can see tips on [StanH's CHAX](https://github.com/StanHash/FE-CHAX.git):
+
+
+## Wizardry Construction
+
+Just copy [source code inside Proj.Decomp of FireEmblem8u](https://github.com/FireEmblemUniverse/fireemblem8u/tree/master/src) and put them inside `Wizardry/`, add command `#include "gbafe.h"` on head on our own C file, include `*.lyn.event` file in Main.event and `make hack`. You can get more info in [readme file of C-Lib](https://github.com/MokhaLeee/FE-CLib-Mokha.git).
 
 ## General `make`/EA guidelines
 
 - **_Never_ use spaces in filenames/paths.** This breaks `make` horribly. This is one of the main reason I had to modify most of circles tools for them to work with this setup.
+
+
 - Don't use `#incext`/`#inctext` unless you *really* need to. Use `#include`/`#incbin` with files generated from Makefile rules instead. This speeds up the build process tremendously.
+
+
+- **Q:** ERROR with `switch` statement when assembling C, where EA would told me `Undefined identifier: _LP___gnu_thumb1_case_uqi`
+
+	**A:** Change optimize-options of gcc from `Os` to `O1` or `O2` inside `make_wizardry.mk`.
+
+- **Q:** ERROR: `ModuleNotFoundError: No module named 'six'`
+
+	**A:** You need to install some modules for using TMX2EA. Make sure Python3 installed and get into FE-PyTools/TMX2EA folder, then, 
+	
+	```pip install -r requirements.txt```
+	
+	Just follow to [Tools/PyTools/TMS2EA/SETUP.md](https://github.com/StanHash/tmx2ea/blob/c77111a9c7a13208a2afb0984b253fa84df79479/SETUP.md).
 
 ## Big thankies
 
-Kinda random but I feel like giving credit.
-
+- StanH: `GBAFE-CHAX` constructor, genius, cool guy.
 - circleseverywhere: Most tools in the `Tools/py` folder are based off his work. `_FE8EssentialFixes.event` is his composition (I think). Also lots of cool hax to base off mine. Also the original `MAKE HACK.cmd`. Also cool guy.
 - Colorz: Maintains EA and implemented a lot of useful stuff. Also made `ParseFile` and `PortraitFormatter`, both of which are used here. Also useful hax. Also *Everything Assembler*. Also cool guy.
 - Tequila: the Teq Doq is the best thing ever (I probably never would have gotten that far if not for that). Also lots of hax. Also cool guy. :duck:
