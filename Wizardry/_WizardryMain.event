@@ -1,74 +1,15 @@
 #ifndef WIZARDRY
 #define WIZARDRY
 
+
+// This file is the main file that includes Wizardry (aka Engine Hacks or Asm Hacks)
+// It plays the same role as "Master Hack Installers" from other buildfiles.
+
+
 #include "_FE8EssentialFixes.event"
-
-#define TextScrollSpeed 2
-#include "TextScrollSpeed.event"
-
-#include "CUnitAction/UnitAction.event"
-#include "CIconDisplay/IconDisplay.event"
-
-// #include "CFreeSelect/FreeSelect.event"
-// #include "CRewarp/Rewarp.event"
-
-#include "DanceAi/DanceAi.event"
-
-#include "CLolStats/LolStats.event"
-#include "LazberianTurnFlow/LazberianTurnFlow.event"
-
-#include "3rdParty/HpBars/HpBars.event"
-// #include "3rdParty/KirbDebug/KirbDebug.event"
-// #include "3rdParty/CSAEngine/CSAEngine.event"
-
-#include "CustomGameSpeed/CustomGameSpeed.event"
-#include "PerChapterBattleQuotes/PerChapterBattleQuotes.event"
-#include "ExpandedModularSave/ExModularSave.event"
-
-#include "Mimic/Mimic.event"
-
 #include "UnitMenu.event"
 
-/*
+#include "UnitStatusGetter/bmunit.lyn.event"
 
-// Custom BattleCalc/TradeCheck and what not lists here
-// Example:
-
-ALIGN 4
-BattleStatCalcList:
-	POIN BCalcDefRes
-	POIN BCalcPower
-	POIN BCalcASpd
-	POIN BCalcHit
-	POIN BCalcAvo
-	POIN BCalcCrit
-	POIN BCalcDodge
-	POIN BCalcSupport
-	POIN BCalcWRank
-	POIN BCalcStatus
-
-	// Extra things
-
-	WORD 0 // end
-
-#define BattleStatCalcListDeclared
-
-// */
-
-TradeCheckList:
-	POIN AreUnitsSameAllegiance
-	POIN AreNeitherUnitPhantomClass
-
-#ifdef HAX_MIMIC
-	POIN AreNeitherUnitMimics
-#endif // HAX_MIMIC
-
-	WORD 0 // end
-
-#define TradeCheckListDeclared
-
-// #include "CBattleCalc/CBattleCalc.event"
-
-#include "TradeCheck/TradeCheck.event"
 
 #endif // WIZARDRY

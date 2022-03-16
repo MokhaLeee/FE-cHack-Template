@@ -1,3 +1,0 @@
-
-#                       Index MouthX MouthY EyesX EyesY IndexDefinition
-"Portraits/Florina.png" 0x02  2      7      3     5     MUG_FLORINA

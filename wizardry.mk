@@ -3,7 +3,7 @@
 # = OBJECTS & DMPS =
 # ==================
 
-LYN_REFERENCE := Tools/CLib/reference/FE8U-20190316.o
+LYN_REFERENCE := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220222.o
 
 # OBJ to event
 %.lyn.event: %.o $(LYN_REFERENCE)
@@ -20,7 +20,7 @@ LYN_REFERENCE := Tools/CLib/reference/FE8U-20190316.o
 # ========================
 
 # Setting C/ASM include directories up (there is none yet)
-INCLUDE_DIRS := Tools/CLib/include Wizardry/Include
+INCLUDE_DIRS := Tools/FE-CLib-Mokha/include Wizardry/Include Tools
 INCFLAGS     := $(foreach dir, $(INCLUDE_DIRS), -I "$(dir)")
 
 # setting up compilation flags

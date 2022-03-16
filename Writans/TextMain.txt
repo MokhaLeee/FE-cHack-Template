@@ -1,10 +1,3 @@
 
-# 0x0212 textFlorinaName
-Florina[X]
-
-# 0x0903 textDummy
-This is a placeholder[X]
-
-#include "TextRewarp.txt"
-#include "TextMimic.txt"
-#include "PeerBlitzCh9Text.txt"
+# 0x0213 textMokhaName
+Mokha[X]

@@ -63,11 +63,7 @@ UnitMenuCommands:
 	UM_Steal
 	UM_Summon
 	UM_Summon_DK
-
-#ifdef HAX_MIMIC
-	UnitMenuCommand(textMimicCommandName, textMimicCommandDesc, NormalText, MimicCmdUsability, MimicCmdEffect)
-#endif // MAX_MIMIC
-
+	
 	UM_Pick
 	UM_Talk
 	UM_Support
@@ -82,10 +78,6 @@ UnitMenuCommands:
 	UM_Give
 	UM_Take
 	UM_Drop
-
-#ifdef HAX_REWARP_COMMAND
-	UnitMenuCommand(textRewarpCommandName, textRewarpCommandDesc, NormalText, RCUsability, RCEffect)
-#endif // HAX_REWARP_COMMAND
 
 	UM_Item
 	UM_Trade
