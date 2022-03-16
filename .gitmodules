@@ -10,3 +10,6 @@
 [submodule "Tools/EventAssembler"]
 	path = Tools/EventAssembler
 	url = https://github.com/StanHash/EventAssembler.git
+[submodule "Tools/FE-CLib-Mokha"]
+	path = Tools/FE-CLib-Mokha
+	url = https://github.com/MokhaLeee/FE-CLib-Mokha.git
