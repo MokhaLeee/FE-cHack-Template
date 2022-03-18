@@ -21,7 +21,8 @@ A simple example to build GBA FE8U hacks (in C) based on [Proj.decomp](https://g
 For more details, you can see tips on [StanH's CHAX](https://github.com/StanHash/FE-CHAX.git):
 
 **Note**
-Since I may update the repository of C-Lib from time to time, so I suggest you update each submodles any time you want to use this template through commands:
+
+Since I may update the repository of C-Lib from time to time, so I suggest you update each submodels any time you want to use this template through commands:
 ```
 git submodule sync
 git submodule update --init
