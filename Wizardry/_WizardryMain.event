@@ -6,10 +6,15 @@
 // It plays the same role as "Master Hack Installers" from other buildfiles.
 
 
+#include "Src/bmunit.lyn.event"
+PROTECT $191B0 $191D0	// GetUnitPower
+PROTECT $19210 $19234	// GetUnitSpeed
+
+
+
+
+
+// Put the ASM hacks at the end so that we can check it out through 'PROTECT'!
 #include "_FE8EssentialFixes.event"
-#include "UnitMenu.event"
-
-#include "UnitStatusGetter/bmunit.lyn.event"
-
 
 #endif // WIZARDRY
