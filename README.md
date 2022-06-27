@@ -44,7 +44,7 @@ You can get more info in [readme file of C-Lib](https://github.com/MokhaLeee/FE-
 
 - **Q:** ERROR with `switch` statement when assembling C, where EA would told me `Undefined identifier: _LP___gnu_thumb1_case_uqi`
 
-	**A:** Change optimize-options of gcc from `Os` to `O1` or `O2` inside `make_wizardry.mk`.
+	**A:** Change optimize-options of gcc from `Os` to `O1` or `O2` inside `wizardry.mk`.
 
 - **Q:** ERROR: `ModuleNotFoundError: No module named 'six'`
 
