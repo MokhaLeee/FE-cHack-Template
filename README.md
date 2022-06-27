@@ -26,6 +26,7 @@ Since I may update the repository of C-Lib from time to time, so I suggest you u
 ```
 git submodule sync
 git submodule update --init
+git submodule update --remote
 ```
 
 ## Wizardry Construction

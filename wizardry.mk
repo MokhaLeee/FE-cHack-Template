@@ -3,12 +3,12 @@
 # = OBJECTS & DMPS =
 # ==================
 
-LYN_REFERENCE := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220222.o
+LYN_REF := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220503.o
 
 # OBJ to event
-%.lyn.event: %.o $(LYN_REFERENCE)
+%.lyn.event: %.o $(LYN_REF)
 	$(NOTIFY_PROCESS)
-	@$(LYN) $< $(LYN_REFERENCE) > $@
+	@$(LYN) $< $(LYN_REF) > $@
 
 # OBJ to DMP rule
 %.dmp: %.o
@@ -20,8 +20,8 @@ LYN_REFERENCE := Tools/FE-CLib-Mokha/reference/FE8U-Decomp-20220222.o
 # ========================
 
 # Setting C/ASM include directories up (there is none yet)
-INCLUDE_DIRS := Tools/FE-CLib-Mokha/include Wizardry/Include Tools
-INCFLAGS     := $(foreach dir, $(INCLUDE_DIRS), -I "$(dir)")
+INC_DIRS := Tools/FE-CLib-Mokha/include Wizardry/_Include
+INCFLAGS     := $(foreach dir, $(INC_DIRS), -I "$(dir)")
 
 # setting up compilation flags
 ARCH    := -mcpu=arm7tdmi -mthumb -mthumb-interwork
